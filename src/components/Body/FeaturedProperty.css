@@ -1,0 +1,33 @@
+.feature-properties {
+  height: 600px;
+  margin: 40px 0;
+  /* border: 1px solid black; */
+}
+
+.feature-properties img {
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+}
+
+.slick-center .feature-properties img {
+  filter: blur(0);
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.slick-slide:not(.slick-center) .feature-properties img {
+  filter: blur(3px);
+  transform: scale(0.9);
+}
+
+.featured-property-carousel .slick-dots {
+  position: absolute; /* Ensure proper positioning */
+  bottom: 4%;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center align */
+  display: flex;
+  justify-content: center; /* Center dots horizontally */
+  padding: 0;
+  margin: 0;
+}

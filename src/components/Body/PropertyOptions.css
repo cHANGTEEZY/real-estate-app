@@ -1,0 +1,46 @@
+.icon-div {
+  text-align: center;
+  cursor: pointer;
+  transition: all ease-in-out 200ms;
+  color: rgb(143, 143, 143);
+  font-family: Roboto, "Sans-serif";
+  white-space: nowrap;
+  margin: 20px 0;
+}
+
+.icon-div.clicked {
+  color: rgb(57, 56, 56);
+}
+
+.icon-div:hover {
+  color: rgb(57, 56, 56);
+}
+
+.sliding-card-title {
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+.slick-prev {
+  left: -2%;
+}
+.slick-next {
+  right: -3%;
+}
+
+.slick-prev,
+.slick-next {
+  background-color: black !important;
+  width: 30px;
+  height: 30px;
+  z-index: 1;
+  border-radius: 30%;
+}
+
+.slick-prev:hover,
+.slick-prev:focus,
+.slick-next:hover,
+.slick-next:focus {
+  background-color: black !important;
+  opacity: 0.8;
+}

@@ -1,0 +1,120 @@
+header {
+  width: 100%;
+  /* border-bottom: 2px solid rgb(235, 235, 235); */
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  box-shadow: var(--header-box-shadow);
+  background-color: #fff;
+}
+
+.header-container {
+  display: flex;
+  max-width: 1300px;
+  margin: 0 auto;
+  height: 140px;
+  /* justify-content: center; */
+  align-items: center;
+  background-color: #fff;
+  position: relative;
+}
+
+.logo img {
+  /* height: 8rem; */
+  width: 8rem;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+.nav-account-management {
+  display: flex;
+  gap: 10px;
+  /* justify-content: center; */
+  align-items: center;
+  cursor: pointer;
+}
+
+.nest-your-home {
+  font-family: var(--primary-font);
+  text-wrap: nowrap;
+  font-size: 0.82rem;
+  padding: 10px;
+  transition: var(--transition-all-ease);
+}
+
+.nest-your-home:hover {
+  border-radius: var(--search-border-radius);
+  box-shadow: var(--box-shadow) var(--search-bar-box-shadow-color);
+}
+
+.user-profile-menu {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid hsl(0, 0%, 90%);
+  transition: var(--transition-all-ease);
+  border-radius: var(--search-border-radius);
+}
+
+.user-profile-menu:hover {
+  box-shadow: var(--header-box-shadow);
+}
+
+.user-profile-burger-logo {
+  height: 20px;
+  width: 20px;
+}
+
+.user-logo {
+  height: 30px;
+  width: 30px;
+}
+
+.account-management-dropdown {
+  font-family: Roboto;
+  font-size: 0.9rem;
+  position: absolute;
+  right: 0;
+  bottom: -170%;
+  opacity: 0;
+  pointer-events: none;
+  background-color: #fff;
+  width: 230px;
+  /* padding-left: 1rem; */
+  text-indent: 20px;
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--header-box-shadow);
+}
+
+.account-management-dropdown.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.account-management {
+  display: grid;
+  gap: 3px;
+  margin-bottom: 20px;
+}
+
+.account-item {
+  padding: 10px 0;
+}
+
+.account-item:hover {
+  background-color: rgb(246, 246, 246);
+}
+
+.account-management-top {
+  padding-top: 20px;
+}
+
+.account-management-top::after {
+  content: "";
+  position: relative;
+  height: 1px;
+  margin-top: 18px;
+  background-color: rgb(232, 222, 222);
+}

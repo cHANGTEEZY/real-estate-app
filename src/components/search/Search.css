@@ -1,0 +1,148 @@
+.search-bar {
+  margin: 40px;
+  box-shadow: 0 0 10px 3px var(--search-bar-box-shadow-color);
+  width: 51rem;
+  border: 1px solid rgb(233, 233, 233);
+  border-radius: var(--search-border-radius);
+  height: 4.2rem;
+  display: flex;
+  position: relative;
+}
+
+.search-bar > div {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.search-bar-div {
+  border-radius: var(--search-border-radius);
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  padding-left: 2rem;
+  transition: var(--transition-backround-ease);
+}
+
+.search-bar.clicked {
+  background-color: var(--search-bar-click-color);
+}
+
+.search-bar-div.clicked {
+  background-color: #fff;
+}
+
+.search-bar-div:not(.clicked):hover {
+  background-color: var(--search-bar-button-hover-color);
+  border-radius: var(--search-border-radius);
+}
+
+.destination-div,
+.checkin-div,
+.checkout-div,
+.search-div {
+  height: 100%;
+  text-align: start;
+  position: relative;
+}
+
+.destination-div {
+  width: 31%;
+}
+
+.checkin-div {
+  width: 19%;
+}
+
+.checkout-div {
+  width: 19%;
+}
+
+.search-div {
+  width: 31%;
+}
+
+.destination-div::after,
+.checkin-div::after,
+.checkout-div::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 60%;
+  width: 1px;
+  background-color: rgb(233, 233, 233);
+  transform: translateY(-50%);
+}
+
+.search-title {
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.search-span {
+  font-family: Roboto, sans-serif;
+  font-weight: 450;
+  color: rgb(106, 106, 106);
+  font-size: 0.9rem;
+}
+
+.search-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.search-outer-div {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20px;
+  align-items: center;
+}
+
+.search-inner-div {
+  display: grid;
+}
+
+.search-area {
+  display: flex;
+  align-items: center;
+  background-color: #e41d5a;
+  color: white;
+  padding: 10px;
+  border-radius: var(--search-border-radius);
+  position: relative;
+  right: -3%;
+  transition: all 200ms ease;
+  overflow: hidden;
+  width: 48px;
+}
+
+.search-icon {
+  min-width: 24px;
+  height: 24px;
+  transition: all 200ms ease;
+}
+
+.search-text {
+  white-space: nowrap;
+  opacity: 0;
+  transition: var(--transition-all-ease);
+  margin-left: 8px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+}
+
+.search-area.expanded {
+  width: 100px;
+}
+
+.search-area.expanded .search-text {
+  opacity: 1;
+}
+
+.search-div.clicked .search-area {
+  background-color: #de1661;
+}
