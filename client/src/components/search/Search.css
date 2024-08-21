@@ -175,7 +175,7 @@
   width: 25rem;
   border-radius: var(--search-border-radius);
   box-shadow: var(--header-box-shadow);
-  display: block;
+  display: none;
 }
 
 .add-guest-div.clicked {

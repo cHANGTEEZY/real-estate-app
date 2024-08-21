@@ -105,11 +105,13 @@ export default function SearchComponent() {
         </div>
         <div
           className={`search-div search-bar-div ${
-            clicked === "search" ? "clicked" : ""
+            clicked === "search-outer-div" ? "clicked" : ""
           }`}
-          onClick={() => handleClick("search")}
         >
-          <div className="search-outer-div">
+          <div
+            className={`search-outer-div`}
+            onClick={() => handleClick("search-outer-div")}
+          >
             <div className="search-inner-div">
               <span className="search-title">Who</span>
               <span className="search-span add-guest-span">
@@ -123,12 +125,19 @@ export default function SearchComponent() {
               </span>
             </div>
           </div>
-          <div
-            className={`add-guest-div ${clicked === "search" ? "clicked" : ""}`}
-            ref={addGuestRef}
-          >
-            <AddGuest setTotalGuest={setTotalGuest} />
-          </div>
+          {clicked === "search-outer-div" ? (
+            <div
+              className={`add-guest-div ${
+                clicked === "search-outer-div" ? "clicked" : ""
+              }`}
+              ref={addGuestRef}
+            >
+              <AddGuest setTotalGuest={setTotalGuest} />
+            </div>
+          ) : (
+            ""
+          )}
+          {console.log(clicked)}
         </div>
       </div>
     </div>
