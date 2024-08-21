@@ -1,0 +1,44 @@
+.map-grid-container {
+  box-shadow: var(--header-box-shadow);
+  border-radius: var(--search-border-radius);
+  padding: 2rem;
+  height: auto;
+}
+
+.map-grid-title {
+  font-family: var(--primary-font);
+  font-weight: 550;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.map-grid {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.map-grid-item {
+  padding: 8px 8px;
+  transition: background-color 50ms ease;
+  border-radius: var(--card-border-radius);
+}
+
+.map-grid-item:hover {
+  background-color: hsl(0, 0%, 90%);
+}
+
+.map-region-title {
+  font-family: var(--primary-font);
+  font-size: 0.85rem;
+  font-weight: 400;
+  padding-top: 3px;
+  text-align: start;
+}
+
+.map-grid-image img {
+  border-radius: var(--card-border-radius);
+  height: 7rem;
+}

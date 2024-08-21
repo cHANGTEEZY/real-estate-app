@@ -5,6 +5,7 @@ import Header from "../../components/Header/Header";
 import PropertyCard from "../../components/Body/PropertyCard";
 import FeaturedProperty from "../../components/Body/FeaturedProperty";
 import Footer from "../../components/Footer/Footer";
+import AddGuest from "../../components/ui/Guest/AddGuest";
 
 const Home = () => {
   return (

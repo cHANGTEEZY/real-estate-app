@@ -1,14 +1,30 @@
 import "./Search.css";
 import { Search } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
+import DateRangePickerComp from "../ui/Calendar/DateRangePickerComp";
+import format from "date-fns/format";
+import { addDays } from "date-fns";
+import MapCompo from "../../components/ui/Map/Map";
+import AddGuest from "../ui/Guest/AddGuest";
 
 export default function SearchComponent() {
   const [clicked, setClicked] = useState(null);
+  const [range, setRange] = useState([
+    {
+      startDate: new Date(),
+      endDate: addDays(new Date(), 7),
+      key: "selection",
+    },
+  ]);
   const searchBarRef = useRef(null);
 
-  function handleClick(clickedDiv) {
-    setClicked(clickedDiv);
-  }
+  const handleClick = (clickedDiv) => {
+    setClicked(clicked === clickedDiv ? null : clickedDiv);
+  };
+
+  const handleClose = () => {
+    setClicked(null);
+  };
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -42,24 +58,46 @@ export default function SearchComponent() {
           <span className="search-span destination-span">
             Search destination
           </span>
+          {clicked === "destination" ? (
+            <div className="map-comp-div">
+              <MapCompo />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
-        <div
-          className={`checkin-div search-bar-div ${
-            clicked === "checking" ? "clicked" : ""
-          }`}
-          onClick={() => handleClick("checking")}
-        >
-          <span className="search-title">Check in</span>
-          <span className="search-span checkin-date-span">Add dates</span>
-        </div>
-        <div
-          className={`checkout-div search-bar-div ${
-            clicked === "checkout" ? "clicked" : ""
-          }`}
-          onClick={() => handleClick("checkout")}
-        >
-          <span className="search-title">Check out</span>
-          <span className="search-span checkout-date-span">Add dates</span>
+        <div className="book-date-div">
+          <div
+            className={`checkin-div date-div ${
+              clicked === "checkin" ? "clicked" : ""
+            }`}
+            onClick={() => handleClick("checkin")}
+          >
+            <span className="search-title">Check in</span>
+            <span className="search-span checkin-date-span">
+              {format(range[0].startDate, "MM/dd/yyyy")}
+            </span>
+          </div>
+          <div
+            className={`checkout-div date-div ${
+              clicked === "checkout" ? "clicked" : ""
+            }`}
+            onClick={() => handleClick("checkout")}
+          >
+            <span className="search-title">Check out</span>
+            <span className="search-span checkout-date-span">
+              {format(range[0].endDate, "MM/dd/yyyy")}
+            </span>
+          </div>
+          {clicked === "checkin" || clicked === "checkout" ? (
+            <div className="date-picker">
+              <DateRangePickerComp
+                range={range}
+                setRange={setRange}
+                onClose={handleClose}
+              />
+            </div>
+          ) : null}
         </div>
         <div
           className={`search-div search-bar-div ${
@@ -79,6 +117,13 @@ export default function SearchComponent() {
               </span>
             </div>
           </div>
+          {clicked === "search" ? (
+            <div className="add-guest-div">
+              <AddGuest />
+            </div>
+          ) : (
+            ""
+          )}
         </div>
       </div>
     </div>

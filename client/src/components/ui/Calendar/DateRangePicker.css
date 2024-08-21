@@ -1,0 +1,8 @@
+.calendarElement {
+  width: 52rem;
+  border-radius: var(--search-border-radius);
+}
+
+.rdrMonth {
+  width: 26rem;
+}
