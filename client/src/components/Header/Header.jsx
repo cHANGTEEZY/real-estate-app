@@ -20,7 +20,7 @@ export default function Header() {
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
-    //cleanup function
+
     () => {
       return document.removeEventListener("mousedown", handleClickOutside);
     };

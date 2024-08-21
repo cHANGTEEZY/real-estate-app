@@ -8,7 +8,9 @@ import MapCompo from "../../components/ui/Map/Map";
 import AddGuest from "../ui/Guest/AddGuest";
 
 export default function SearchComponent() {
+  const [locationName, setLocationName] = useState("");
   const [clicked, setClicked] = useState(null);
+  const [totalGuest, setTotalGuest] = useState(0);
   const [range, setRange] = useState([
     {
       startDate: new Date(),
@@ -16,7 +18,9 @@ export default function SearchComponent() {
       key: "selection",
     },
   ]);
+
   const searchBarRef = useRef(null);
+  const addGuestRef = useRef(null);
 
   const handleClick = (clickedDiv) => {
     setClicked(clicked === clickedDiv ? null : clickedDiv);
@@ -26,16 +30,18 @@ export default function SearchComponent() {
     setClicked(null);
   };
 
-  useEffect(() => {
-    function handleClickOutside(event) {
-      if (
-        searchBarRef.current &&
-        !searchBarRef.current.contains(event.target)
-      ) {
-        setClicked(null);
-      }
+  const handleClickOutside = (event) => {
+    if (
+      searchBarRef.current &&
+      !searchBarRef.current.contains(event.target) &&
+      addGuestRef.current &&
+      !addGuestRef.current.contains(event.target)
+    ) {
+      setClicked(null);
     }
+  };
 
+  useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
@@ -56,15 +62,13 @@ export default function SearchComponent() {
         >
           <span className="search-title">Where</span>
           <span className="search-span destination-span">
-            Search destination
+            {locationName ? locationName : "Search destination"}
           </span>
           {clicked === "destination" ? (
             <div className="map-comp-div">
-              <MapCompo />
+              <MapCompo setLocationName={setLocationName} />
             </div>
-          ) : (
-            ""
-          )}
+          ) : null}
         </div>
         <div className="book-date-div">
           <div
@@ -108,7 +112,9 @@ export default function SearchComponent() {
           <div className="search-outer-div">
             <div className="search-inner-div">
               <span className="search-title">Who</span>
-              <span className="search-span add-guest-span">Add guests</span>
+              <span className="search-span add-guest-span">
+                {totalGuest === 0 ? "Add guest" : totalGuest + " guests"}
+              </span>
             </div>
             <div className={`search-area ${clicked ? "expanded" : ""}`}>
               <Search className="search-icon" />
@@ -117,13 +123,12 @@ export default function SearchComponent() {
               </span>
             </div>
           </div>
-          {clicked === "search" ? (
-            <div className="add-guest-div">
-              <AddGuest />
-            </div>
-          ) : (
-            ""
-          )}
+          <div
+            className={`add-guest-div ${clicked === "search" ? "clicked" : ""}`}
+            ref={addGuestRef}
+          >
+            <AddGuest setTotalGuest={setTotalGuest} />
+          </div>
         </div>
       </div>
     </div>

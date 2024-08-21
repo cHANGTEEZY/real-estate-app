@@ -1,14 +1,22 @@
 import { mapData } from "../../../data/map";
 import "./Map.css";
 
-export default function MapCompo() {
+export default function MapCompo({ setLocationName }) {
+  const locationClick = (title) => {
+    setLocationName(title);
+  };
+
   return (
     <div className="map-grid-container">
       <h1 className="map-grid-title">Search by Region</h1>
       <div className="map-grid">
         {mapData.map((item, index) => {
           return (
-            <div key={index} className="map-grid-item">
+            <div
+              key={index}
+              className="map-grid-item"
+              onClick={() => locationClick(item.title)}
+            >
               <div className="map-grid-image">
                 <img src={item.image} alt={item.title} />
               </div>

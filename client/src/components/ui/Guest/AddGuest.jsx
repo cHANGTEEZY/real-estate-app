@@ -2,7 +2,7 @@ import { addGuest } from "../../../data/addGuest";
 import Counter from "../Counter/Counter";
 import "./AddGuest.css";
 
-export default function AddGuest() {
+export default function AddGuest({ setTotalGuest }) {
   return (
     <div className="add-guest-container">
       {addGuest.map((guest, index) => {
@@ -13,7 +13,10 @@ export default function AddGuest() {
               <span className="guest-age-range">{guest.ageRange}</span>
             </div>
             <div className="guest-counter">
-              <Counter counterRange={guest.guestQuantity} />
+              <Counter
+                counterRange={guest.guestQuantity}
+                setTotalGuest={setTotalGuest}
+              />
             </div>
           </div>
         );
