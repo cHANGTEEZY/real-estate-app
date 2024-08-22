@@ -3,10 +3,18 @@ import "./Header.css";
 import ProjectLogo from "../../assets/images/Logo/StayNest.png";
 import { CircleUserRound, AlignJustify } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
+import PropertyOptions from "../../components/Body/PropertyOptions";
+import { useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [clicked, setClicked] = useState(false);
   const dropDownRef = useRef(false);
+
+  const navigate = useNavigate();
+
+  function handleNavigate(link) {
+    navigate(`/${link}`);
+  }
 
   function handleToggle() {
     setClicked((prevVal) => !prevVal);
@@ -28,34 +36,49 @@ export default function Header() {
 
   return (
     <header>
-      <div className="header-container">
-        <div className="logo">
-          <img src={ProjectLogo} alt="Logo of the project" />
-        </div>
-        <SearchComponent />
-        <div className="nav-account-management">
-          <span className="nest-your-home">Nest your home</span>
-          <div className="user-profile-menu" onClick={handleToggle}>
-            <AlignJustify className="user-profile-burger-logo" />
-            <CircleUserRound className="user-logo" />
-            <div
-              className={`account-management-dropdown ${
-                clicked ? "visible" : ""
-              }`}
-              ref={dropDownRef}
-            >
-              <div className="account-management-top account-management">
-                <span className="account-item"> Sign up</span>
-                <span className="account-item">Log in</span>
-              </div>
-              <div className="account-management-bottom account-management">
-                <span className="account-item">Gift cards</span>
-                <span className="account-item">Nest your home</span>
-                <span className="account-item">Help Center</span>
+      <div className="header-border">
+        <div className="header-container">
+          <div className="logo">
+            <img src={ProjectLogo} alt="Logo of the project" />
+          </div>
+          <SearchComponent />
+          <div className="nav-account-management">
+            <span className="nest-your-home">Nest your home</span>
+            <div className="user-profile-menu" onClick={handleToggle}>
+              <AlignJustify className="user-profile-burger-logo" />
+              <CircleUserRound className="user-logo" />
+              <div
+                className={`account-management-dropdown ${
+                  clicked ? "visible" : ""
+                }`}
+                ref={dropDownRef}
+              >
+                <div className="account-management-top account-management">
+                  <span
+                    className="account-item"
+                    onClick={() => handleNavigate("signup")}
+                  >
+                    Sign up
+                  </span>
+                  <span
+                    className="account-item"
+                    onClick={() => handleNavigate("login")}
+                  >
+                    Log in
+                  </span>
+                </div>
+                <div className="account-management-bottom account-management">
+                  <span className="account-item">Gift cards</span>
+                  <span className="account-item">Nest your home</span>
+                  <span className="account-item">Help Center</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
+      </div>
+      <div className="variety-icons">
+        <PropertyOptions />
       </div>
     </header>
   );

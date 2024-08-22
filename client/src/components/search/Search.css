@@ -176,6 +176,7 @@
   border-radius: var(--search-border-radius);
   box-shadow: var(--header-box-shadow);
   display: none;
+  z-index: 12;
 }
 
 .add-guest-div.clicked {

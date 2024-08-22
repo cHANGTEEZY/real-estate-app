@@ -4,8 +4,13 @@ header {
   position: sticky;
   top: 0;
   z-index: 4;
-  box-shadow: var(--header-box-shadow);
+  /* box-shadow: var(--header-box-shadow); */
   background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.header-border {
+  border-bottom: 1px solid hsl(0, 0%, 90%);
 }
 
 .header-container {
@@ -86,6 +91,7 @@ header {
   text-indent: 20px;
   border-radius: var(--card-border-radius);
   box-shadow: var(--header-box-shadow);
+  z-index: 10;
 }
 
 .account-management-dropdown.visible {
@@ -117,4 +123,9 @@ header {
   height: 1px;
   margin-top: 18px;
   background-color: rgb(232, 222, 222);
+}
+
+.variety-icons {
+  max-width: 1300px;
+  margin: 0 auto;
 }

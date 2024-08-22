@@ -1,5 +1,5 @@
 import { properties } from "../../data/properties";
-import PropertyOptions from "../../components/Body/PropertyOptions";
+
 import "./Home.css";
 import Header from "../../components/Header/Header";
 import PropertyCard from "../../components/Body/PropertyCard";
@@ -11,9 +11,6 @@ const Home = () => {
     <>
       <Header />
       <div className="home">
-        <div className="variety-icons">
-          <PropertyOptions />
-        </div>
         <div className="property-cards">
           {properties.map((property, index) => (
             <PropertyCard key={index} property={property} />
