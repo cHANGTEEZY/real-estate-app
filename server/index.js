@@ -1,20 +1,30 @@
 import express from "express";
-import bodyparser from "body-parser";
+import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
 
-app.use(bodyparser.json());
+app.use(bodyParser.json());
 
-const time = new Date();
-const year = time.getFullYear();
+const users = [];
 
-app.get("/home", (req, res, next) => {
-  res.send(`Hello world in ${year}`);
+// GET endpoint to retrieve users
+app.get("/users", (req, res) => {
+  res.send(users);
 });
 
-app.post("/signin", (req, res, next) => {});
+// POST endpoint to create a new user
+app.post("/users", (req, res) => {
+  try {
+    const user = { name: req.body.name, password: req.body.password };
+    users.push(user);
+    res.status(201).send("user created successfully");
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Server error");
+  }
+});
 
 app.listen(port, () => {
-  console.log(`listening in port ${port}`);
+  console.log(`listening on port ${port}`);
 });

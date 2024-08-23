@@ -129,7 +129,7 @@
 .search-area {
   display: flex;
   align-items: center;
-  background-color: #e41d5a;
+  background-color: #14b8a6;
   color: white;
   padding: 10px;
   border-radius: var(--search-border-radius);
@@ -164,7 +164,7 @@
 }
 
 .search-div.clicked .search-area {
-  background-color: #de1661;
+  background-color: #14b8a6;
 }
 
 .add-guest-div {

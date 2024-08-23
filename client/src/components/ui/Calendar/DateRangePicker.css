@@ -1,6 +1,18 @@
 .calendarElement {
   width: 52rem;
+}
+
+.calendarElement,
+.calendarWrap,
+.rdrDateRangePickerWrapper,
+.calendarElement,
+.rdrCalendarWrapper,
+.rdrDateRangeWrapper,
+.rdrDateDisplayWrapper,
+.rdrDateDisplay {
   border-radius: var(--search-border-radius);
+  background-color: #fff;
+  font-family: var(--primary-font);
 }
 
 .rdrMonth {

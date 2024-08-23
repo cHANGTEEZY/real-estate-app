@@ -16,6 +16,8 @@
     "@mui/material": "^5.16.7",
     "@mui/x-date-pickers": "^7.13.0",
     "@mui/x-date-pickers-pro": "^7.13.0",
+    "axios": "^1.7.4",
+    "bootstrap": "^5.3.3",
     "date-fns": "^3.6.0",
     "dayjs": "^1.11.12",
     "lucide-react": "^0.424.0",
@@ -24,8 +26,10 @@
     "react-date-range": "^2.0.1",
     "react-datepicker": "^7.3.0",
     "react-dom": "^18.3.1",
+    "react-login-page": "^1.0.4",
     "react-router-dom": "^6.26.0",
     "react-slick": "^0.30.2",
+    "react-toastify": "^10.0.5",
     "slick-carousel": "^1.8.1"
   },
   "devDependencies": {

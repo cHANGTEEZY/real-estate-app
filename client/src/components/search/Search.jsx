@@ -22,6 +22,24 @@ export default function SearchComponent() {
   const searchBarRef = useRef(null);
   const addGuestRef = useRef(null);
 
+  // const data = {
+  //   location: "",
+  //   checkInDate: "",
+  //   checkOutDate: "",
+  //   noOfGues: "",
+  // };
+
+  // const search = async () => {
+  //   const url = "somewhere.com";
+  //   try {
+  //     const reponse = await fetch(url, {
+  //       method: "POST",
+  //       headers: { "Content-Type": "Application/json" },
+
+  //     });
+  //   } catch (error) {}
+  // };
+
   const handleClick = (clickedDiv) => {
     setClicked(clicked === clickedDiv ? null : clickedDiv);
   };
@@ -120,7 +138,10 @@ export default function SearchComponent() {
             </div>
             <div className={`search-area ${clicked ? "expanded" : ""}`}>
               <Search className="search-icon" />
-              <span className={`search-text ${clicked ? "clicked" : ""}`}>
+              <span
+                className={`search-text ${clicked ? "clicked" : ""}`}
+                // onClick={search}
+              >
                 Search
               </span>
             </div>
@@ -137,7 +158,6 @@ export default function SearchComponent() {
           ) : (
             ""
           )}
-          {console.log(clicked)}
         </div>
       </div>
     </div>

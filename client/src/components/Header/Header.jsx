@@ -1,14 +1,17 @@
-import SearchComponent from "../search/Search";
 import "./Header.css";
 import ProjectLogo from "../../assets/images/Logo/StayNest.png";
 import { CircleUserRound, AlignJustify } from "lucide-react";
 import { useState, useRef, useEffect } from "react";
-import PropertyOptions from "../../components/Body/PropertyOptions";
 import { useNavigate } from "react-router-dom";
+import SearchComponent from "../search/Search";
+import PropertyOptions from "../Body/PropertyOptions";
 
-export default function Header() {
+export default function Header({
+  showSearch = true,
+  showPropertyOptions = true,
+}) {
   const [clicked, setClicked] = useState(false);
-  const dropDownRef = useRef(false);
+  const dropDownRef = useRef(null);
 
   const navigate = useNavigate();
 
@@ -29,8 +32,8 @@ export default function Header() {
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
 
-    () => {
-      return document.removeEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
@@ -41,7 +44,7 @@ export default function Header() {
           <div className="logo">
             <img src={ProjectLogo} alt="Logo of the project" />
           </div>
-          <SearchComponent />
+          {showSearch && <SearchComponent />}
           <div className="nav-account-management">
             <span className="nest-your-home">Nest your home</span>
             <div className="user-profile-menu" onClick={handleToggle}>
@@ -77,9 +80,11 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="variety-icons">
-        <PropertyOptions />
-      </div>
+      {showPropertyOptions && (
+        <div className="variety-icons">
+          <PropertyOptions />
+        </div>
+      )}
     </header>
   );
 }

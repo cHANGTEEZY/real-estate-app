@@ -1,0 +1,69 @@
+/* Signup.css */
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.signup-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid rgb(194, 189, 189);
+  /* padding: 20px; */
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--form-box-shadow);
+  cursor: pointer;
+  transition: all ease-in 200ms;
+  font-family: var(--primary-font);
+}
+
+.form:hover {
+  border-color: black;
+}
+
+.form-header {
+  /* border: 1px solid red; */
+  /* height: 4rem; */
+  font-size: 3rem;
+  font-weight: 450;
+  border-bottom: 1px solid rgb(208, 198, 198);
+  width: 100%;
+  text-align: center;
+}
+
+.form-error {
+  /* border: 1px solid red; */
+  color: red;
+  margin: 10px 0;
+}
+
+.form-group {
+  display: grid;
+  /* margin-bottom: 2rem; */
+  width: 25rem;
+  margin: 0 20px 2rem 20px;
+  label {
+    font-size: 1.4rem;
+  }
+  input {
+    padding: 1rem 0;
+    border-radius: var(--card-border-radius);
+    border: 1px solid black;
+    text-indent: 0.7rem;
+  }
+}
+
+.footer-position {
+  margin-top: auto;
+}
