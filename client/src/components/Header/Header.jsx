@@ -42,7 +42,11 @@ export default function Header({
       <div className="header-border">
         <div className="header-container">
           <div className="logo">
-            <img src={ProjectLogo} alt="Logo of the project" />
+            <img
+              src={ProjectLogo}
+              alt="Logo of the project"
+              onClick={() => handleNavigate("")}
+            />
           </div>
           {showSearch && <SearchComponent />}
           <div className="nav-account-management">

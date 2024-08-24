@@ -24,6 +24,7 @@ export default function SignUp() {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
       toast.error("Password do not match");
+      return;
     }
     try {
       const response = await fetch("https://localhost:3000/signup", {
