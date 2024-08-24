@@ -2,12 +2,12 @@ import { useState } from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import { toast } from "react-toastify";
-import "./Signup.css";
+import "./Authenticate.css";
 import logo from "../../assets/images/Logo/n.png";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
-    usename: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
@@ -22,12 +22,19 @@ export default function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.password !== formData.confirmPassword) {
-      toast.error("Password do not match");
-      return;
+    let errorMessage = "";
+    if (!formData.username) errorMessage += "Enter a username. ";
+    if (!formData.email) errorMessage += "Enter an email. ";
+    if (!formData.password) errorMessage += "Password is required. ";
+    if (formData.password !== formData.confirmPassword)
+      errorMessage += "Passwords do not match. ";
+
+    if (errorMessage) {
+      toast.error(errorMessage);
     }
+
     try {
-      const response = await fetch("https://localhost:3000/signup", {
+      const response = await fetch("http://localhost:3000/register", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -36,7 +43,8 @@ export default function SignUp() {
       });
 
       if (!response.ok) {
-        throw new Error(`errror ${response.status}`);
+        const responseText = await response.text();
+        toast.error(responseText);
       }
       const result = await response.json();
       toast.success(result || "Account created successfully");
@@ -67,7 +75,6 @@ export default function SignUp() {
                   name="username"
                   value={formData.username}
                   onChange={handleChange}
-                  required
                 />
               </div>
               <div className="form-group form-padding">
@@ -77,7 +84,6 @@ export default function SignUp() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
                 />
               </div>
               <div className="form-group form-padding">
@@ -87,7 +93,6 @@ export default function SignUp() {
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
-                  required
                 />
               </div>
               <div className="form-group form-padding">
@@ -97,12 +102,11 @@ export default function SignUp() {
                   name="confirmPassword"
                   value={formData.confirmPassowrd}
                   onChange={handleChange}
-                  required
                 />
               </div>
               <div className="form-footer form-padding">
                 <button type="submit" className="submit-button">
-                  Submit
+                  Sign up
                 </button>
                 <span className="form-footer-span">
                   Already a user? <a href={"/login"}>Login</a>

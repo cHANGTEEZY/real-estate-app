@@ -1,30 +1,23 @@
 import express from "express";
 import bodyParser from "body-parser";
+import cors from "cors";
+import register from "./register.js";
 
 const app = express();
 const port = 3000;
 
+//middlewares
 app.use(bodyParser.json());
+app.use(cors());
 
-const users = [];
-
-// GET endpoint to retrieve users
-app.get("/users", (req, res) => {
-  res.send(users);
+//routes
+app.get("/", (req, res) => {
+  res.send("Hello  world");
 });
 
-// POST endpoint to create a new user
-app.post("/users", (req, res) => {
-  try {
-    const user = { name: req.body.name, password: req.body.password };
-    users.push(user);
-    res.status(201).send("user created successfully");
-  } catch (error) {
-    console.error(error.message);
-    res.status(500).send("Server error");
-  }
-});
+app.use("/register", register);
 
+//server
 app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
