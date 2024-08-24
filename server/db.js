@@ -1,11 +1,9 @@
-import { Pool } from "pg";
+import pg from "pg";
 
-const pool = new Pool({
-  user: "changteezy",
+export const pool = new pg.Pool({
+  user: "postgres",
   host: "localhost",
   database: "real_estate_db",
   password: "changteezy",
   port: 5432,
 });
-
-export { pool };

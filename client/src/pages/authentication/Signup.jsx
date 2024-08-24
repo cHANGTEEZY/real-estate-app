@@ -45,12 +45,12 @@ export default function SignUp() {
       if (!response.ok) {
         const responseText = await response.text();
         toast.error(responseText);
+      } else {
+        const result = await response.text();
+        toast.success(result);
       }
-      const result = await response.json();
-      toast.success(result || "Account created successfully");
     } catch (error) {
-      console.error(error.message);
-      toast.error("An error occured during sign-up");
+      console.log(error);
     }
   };
 
