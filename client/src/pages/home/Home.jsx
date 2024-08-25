@@ -6,10 +6,10 @@ import PropertyCard from "../../components/Body/PropertyCard";
 import FeaturedProperty from "../../components/Body/FeaturedProperty";
 import Footer from "../../components/Footer/Footer";
 
-const Home = () => {
+const Home = ({ isAuthenticated }) => {
   return (
     <>
-      <Header />
+      <Header isAuthenticated={isAuthenticated} />
       <div className="home">
         <div className="property-cards">
           {properties.map((property, index) => (
@@ -20,7 +20,6 @@ const Home = () => {
           <FeaturedProperty />
         </div>
       </div>
-
       <Footer />
     </>
   );

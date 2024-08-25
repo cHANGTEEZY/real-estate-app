@@ -27,14 +27,18 @@ router.post("/", async (req, res) => {
 
     const user = result.rows[0];
 
-    const checkIfPassworIsCorrect = bcrypt.compare(
+    const checkIfPassworIsCorrect = await bcrypt.compare(
       password,
       user.user_password
     );
+
+    console.log(checkIfPassworIsCorrect);
+
     if (!checkIfPassworIsCorrect) {
       res.status(400).json("Password incorrect");
+    } else {
+      res.status(200).json("Logged in ");
     }
-    res.status(200).json("Logged in ");
   } catch (error) {
     console.error(error.message);
     res.status(500).json("Server error");

@@ -1,9 +1,9 @@
+/* Header.css */
 header {
   width: 100%;
   position: sticky;
   top: 0;
   z-index: 4;
-
   background-color: #fff;
   margin-bottom: 20px;
 }
@@ -28,7 +28,6 @@ header.scrolled {
 }
 
 .logo img {
-  /* height: 8rem; */
   width: 8rem;
   object-fit: contain;
   cursor: pointer;
@@ -37,7 +36,6 @@ header.scrolled {
 .nav-account-management {
   display: flex;
   gap: 10px;
-  /* justify-content: center; */
   align-items: center;
   cursor: pointer;
 }
@@ -80,21 +78,20 @@ header.scrolled {
   width: 30px;
 }
 
-.account-management-dropdown {
+.nav-account-management .account-management-dropdown {
   font-family: Roboto;
   font-size: 0.9rem;
   position: absolute;
   right: 0;
-  bottom: -170%;
   opacity: 0;
   pointer-events: none;
   background-color: #fff;
   width: 230px;
-  /* padding-left: 1rem; */
   text-indent: 20px;
   border-radius: var(--card-border-radius);
   box-shadow: var(--header-box-shadow);
   z-index: 10;
+  transition: opacity 0.2s ease;
 }
 
 .account-management-dropdown.visible {

@@ -1,3 +1,4 @@
+// Header.jsx
 import "./Header.css";
 import ProjectLogo from "../../assets/images/Logo/StayNest.png";
 import { CircleUserRound, AlignJustify } from "lucide-react";
@@ -5,10 +6,12 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import SearchComponent from "../search/Search";
 import PropertyOptions from "../Body/PropertyOptions";
+import { toast } from "react-toastify";
 
 export default function Header({
   showSearch = true,
   showPropertyOptions = true,
+  isAuthenticated,
 }) {
   const [clicked, setClicked] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,6 +51,15 @@ export default function Header({
     };
   }, []);
 
+  const dropdownBottom = isAuthenticated ? "-200%" : "-170%";
+
+  const logoutNavigate = useNavigate();
+
+  const handleLogOut = () => {
+    logoutNavigate("/login");
+    toast.info("Logged out");
+  };
+
   return (
     <header className={`${isScrolled ? "scrolled" : ""}`}>
       <div className="header-border">
@@ -70,6 +82,7 @@ export default function Header({
                   clicked ? "visible" : ""
                 }`}
                 ref={dropDownRef}
+                style={{ bottom: dropdownBottom }}
               >
                 <div className="account-management-top account-management">
                   <span
@@ -84,7 +97,13 @@ export default function Header({
                   >
                     Log in
                   </span>
+                  {isAuthenticated && (
+                    <span className="account-item" onClick={handleLogOut}>
+                      Logout
+                    </span>
+                  )}
                 </div>
+
                 <div className="account-management-bottom account-management">
                   <span className="account-item">Gift cards</span>
                   <span className="account-item">Nest your home</span>
