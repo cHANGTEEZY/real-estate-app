@@ -22,15 +22,33 @@ export default function SignUp() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    let errorMessage = "";
-    if (!formData.username) errorMessage += "Enter a username. ";
-    if (!formData.email) errorMessage += "Enter an email. ";
-    if (!formData.password) errorMessage += "Password is required. ";
-    if (formData.password !== formData.confirmPassword)
-      errorMessage += "Passwords do not match. ";
+    let errorMessage = [];
 
-    if (errorMessage) {
-      toast.error(errorMessage);
+    // Username validation
+    if (!formData.username) {
+      errorMessage.push("Enter a username.");
+    } else if (formData.username.length > 20) {
+      errorMessage.push("Username must be less than 20 characters long.");
+    }
+
+    // Email validation
+    if (!formData.email) {
+      errorMessage.push("Enter an email.");
+    }
+
+    // Password validation
+    // const passwordRegex = /^(?=.*[A-Z])(?=.*[!@#$%^&*])(?=.{8,})/;
+    if (!formData.password) {
+      errorMessage.push("Password is required.");
+    }
+
+    // Confirm password validation
+    if (formData.password !== formData.confirmPassword) {
+      errorMessage.push("Passwords do not match.");
+    }
+
+    if (errorMessage.length > 0) {
+      return toast.error(errorMessage.join("\n"));
     }
 
     try {

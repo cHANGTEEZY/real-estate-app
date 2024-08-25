@@ -11,6 +11,17 @@ export default function Header({
   showPropertyOptions = true,
 }) {
   const [clicked, setClicked] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 0);
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   const dropDownRef = useRef(null);
 
   const navigate = useNavigate();
@@ -38,7 +49,7 @@ export default function Header({
   }, []);
 
   return (
-    <header>
+    <header className={`${isScrolled ? "scrolled" : ""}`}>
       <div className="header-border">
         <div className="header-container">
           <div className="logo">

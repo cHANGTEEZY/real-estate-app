@@ -15,10 +15,8 @@
 }
 
 .form-wrapper {
-  /* border: 2px solid black; */
-  background-color: #ffffff;
   display: flex;
-  border: 1px solid grey;
+  border: 2px solid grey;
   justify-content: center;
   align-items: center;
   border-radius: 25px;
@@ -29,12 +27,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
   transition: all ease-in 200ms;
   font-family: var(--primary-font);
-  height: 620px;
+  height: 580px;
   width: 450px;
-  /* background-color: red; */
 }
 
 .form-logo {
@@ -51,7 +47,7 @@
 }
 
 .form-side {
-  height: 600px;
+  height: 560px;
   border-left: 1px solid;
   width: 410px;
   background: rgb(64, 179, 45);
@@ -66,10 +62,6 @@
   border: none;
 }
 
-.form:hover {
-  border-color: black;
-}
-
 .form-header {
   h1 {
     font-size: 1rem;
@@ -78,8 +70,10 @@
   span {
     font-size: 0.81rem;
     color: grey;
+    text-wrap: wrap;
   }
   margin-bottom: 40px;
+  width: 20rem;
 }
 
 .form-group {
@@ -118,6 +112,8 @@
     padding: 0.8rem 0;
     border-radius: 0.5rem;
     cursor: pointer;
+    color: #efeded;
+    font-size: 0.8rem;
   }
 
   .form-footer-span {

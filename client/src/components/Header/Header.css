@@ -1,12 +1,15 @@
 header {
   width: 100%;
-
   position: sticky;
   top: 0;
   z-index: 4;
-  /* box-shadow: var(--header-box-shadow); */
+
   background-color: #fff;
   margin-bottom: 20px;
+}
+
+header.scrolled {
+  box-shadow: var(--header-box-shadow);
 }
 
 .header-border {
