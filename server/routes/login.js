@@ -1,6 +1,7 @@
 import express from "express";
 import bcrypt from "bcryptjs";
 import { pool } from "../db.js";
+import jwtGenerator from "../utils/jwtGenerator.js";
 
 const router = express.Router();
 
@@ -17,7 +18,7 @@ router.post("/", async (req, res) => {
 
   try {
     const result = await pool.query(
-      "SELECT * FROM user_details WHERE user_email=$1 ",
+      "SELECT * FROM user_details WHERE user_email=$1",
       [email]
     );
 
@@ -31,14 +32,15 @@ router.post("/", async (req, res) => {
       password,
       user.user_password
     );
-
-    console.log(checkIfPassworIsCorrect);
-
     if (!checkIfPassworIsCorrect) {
-      res.status(400).json("Password incorrect");
-    } else {
-      res.status(200).json("Logged in ");
+      return res.status(400).json("Your email or password is incorrect");
     }
+
+    const token = jwtGenerator(user.user_id);
+    res.status(200).json({
+      message: "Logged in",
+      token: token,
+    });
   } catch (error) {
     console.error(error.message);
     res.status(500).json("Server error");

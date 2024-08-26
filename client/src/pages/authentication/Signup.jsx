@@ -52,7 +52,7 @@ export default function SignUp() {
     }
 
     try {
-      const response = await fetch("http://localhost:3000/register", {
+      const response = await fetch("http://localhost:3000/auth/register", {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -61,11 +61,11 @@ export default function SignUp() {
       });
 
       if (!response.ok) {
-        const responseText = await response.text();
+        const responseText = await response.json();
         toast.error(responseText);
       } else {
-        const result = await response.text();
-        toast.success(result);
+        const result = await response.json();
+        toast.success(result.message);
       }
     } catch (error) {
       console.log(error);

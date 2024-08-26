@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import "./Authenticate.css";
 import logo from "../../assets/images/Logo/n.png";
 import { useNavigate } from "react-router-dom";
+// import { CookiesProvider, useCookies } from "react-cookie";
 
 export default function Login({ setIsAuthenticated }) {
   const [formData, setFormData] = useState({
@@ -26,7 +27,7 @@ export default function Login({ setIsAuthenticated }) {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/login", {
+      const response = await fetch("http://localhost:3000/auth/login", {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify(formData),
@@ -36,8 +37,9 @@ export default function Login({ setIsAuthenticated }) {
         const result = await response.text();
         toast.error(result);
       } else {
-        const result = await response.text();
-        toast.success(result);
+        const result = await response.json();
+        toast.success(result.message);
+        localStorage.setItem("token", result.token);
         setIsAuthenticated(true);
         redirect("/");
       }

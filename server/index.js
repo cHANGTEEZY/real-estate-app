@@ -16,8 +16,8 @@ app.get("/", (req, res) => {
   res.send("Hello World!!!!");
 });
 
-app.use("/register", register);
-app.use("/login", login);
+app.use("/auth/register", register);
+app.use("/auth/login", login);
 //server
 app.listen(port, () => {
   console.log(`listening on port ${port}`);

@@ -8,10 +8,20 @@ import Home from "./pages/home/Home";
 import Login from "./pages/authentication/Login";
 import SignUp from "./pages/authentication/Signup";
 import "./styles.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+    <Navigate to="/" />;
+  }, []);
 
   return (
     <Router>
@@ -20,7 +30,10 @@ export default function App() {
           path="/"
           element={
             isAuthenticated ? (
-              <Home isAuthenticated={isAuthenticated} />
+              <Home
+                isAuthenticated={isAuthenticated}
+                setIsAuthenticated={setIsAuthenticated}
+              />
             ) : (
               <Navigate to="/login" />
             )

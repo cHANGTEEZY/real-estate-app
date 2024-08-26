@@ -12,6 +12,7 @@ export default function Header({
   showSearch = true,
   showPropertyOptions = true,
   isAuthenticated,
+  setIsAuthenticated,
 }) {
   const [clicked, setClicked] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -56,8 +57,10 @@ export default function Header({
   const logoutNavigate = useNavigate();
 
   const handleLogOut = () => {
+    localStorage.removeItem("token");
     logoutNavigate("/login");
     toast.info("Logged out");
+    setIsAuthenticated(false);
   };
 
   return (
@@ -85,22 +88,29 @@ export default function Header({
                 style={{ bottom: dropdownBottom }}
               >
                 <div className="account-management-top account-management">
-                  <span
-                    className="account-item"
-                    onClick={() => handleNavigate("signup")}
-                  >
-                    Sign up
-                  </span>
-                  <span
-                    className="account-item"
-                    onClick={() => handleNavigate("login")}
-                  >
-                    Log in
-                  </span>
-                  {isAuthenticated && (
-                    <span className="account-item" onClick={handleLogOut}>
-                      Logout
-                    </span>
+                  {isAuthenticated ? (
+                    <>
+                      <span className="account-item">Account</span>
+                      <span className="account-item">Trips</span>
+                      <span className="account-item" onClick={handleLogOut}>
+                        Logout
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span
+                        className="account-item"
+                        onClick={() => handleNavigate("signup")}
+                      >
+                        Sign up
+                      </span>
+                      <span
+                        className="account-item"
+                        onClick={() => handleNavigate("login")}
+                      >
+                        Log in
+                      </span>
+                    </>
                   )}
                 </div>
 
