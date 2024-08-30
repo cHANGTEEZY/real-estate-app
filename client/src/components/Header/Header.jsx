@@ -52,6 +52,7 @@ export default function Header({
     };
   }, []);
 
+
   const dropdownBottom = isAuthenticated ? "-200%" : "-170%";
 
   const logoutNavigate = useNavigate();
@@ -81,9 +82,8 @@ export default function Header({
               <AlignJustify className="user-profile-burger-logo" />
               <CircleUserRound className="user-logo" />
               <div
-                className={`account-management-dropdown ${
-                  clicked ? "visible" : ""
-                }`}
+                className={`account-management-dropdown ${clicked ? "visible" : ""
+                  }`}
                 ref={dropDownRef}
                 style={{ bottom: dropdownBottom }}
               >
@@ -124,6 +124,7 @@ export default function Header({
           </div>
         </div>
       </div>
+
       {showPropertyOptions && (
         <div className="variety-icons">
           <PropertyOptions />
