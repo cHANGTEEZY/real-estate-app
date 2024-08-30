@@ -4,6 +4,7 @@ import Footer from "../../components/Footer/Footer";
 import { toast } from "react-toastify";
 import "./Authenticate.css";
 import logo from "../../assets/images/Logo/n.png";
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -127,7 +128,7 @@ export default function SignUp() {
                   Sign up
                 </button>
                 <span className="form-footer-span">
-                  Already a user? <a href={"/login"}>Login</a>
+                  Already a user? <Link to={"/login"}>Login</Link>
                 </span>
               </div>
             </div>

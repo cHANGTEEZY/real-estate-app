@@ -1,0 +1,22 @@
+.personal-info-container {
+  width: 1200px;
+  margin: 0 auto;
+  font-family: var(--primary-font);
+}
+
+.personal-info-item {
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  border-bottom: 1px solid grey;
+}
+
+.personal-data {
+  display: flex;
+  flex-direction: column;
+
+  button {
+    width: 30%;
+    align-self: center;
+  }
+}

@@ -9,6 +9,13 @@ import Login from "./pages/authentication/Login";
 import SignUp from "./pages/authentication/Signup";
 import "./styles.css";
 import { useEffect, useState } from "react";
+import Account from "./pages/userAccount/Account";
+import Booking from "./pages/userAccount/Booking";
+import PrivacyAndSharing from "./pages/userAccount/PrivacyAndSharing";
+import Hosting from "./pages/userAccount/Hosting";
+import Payments from "./pages/userAccount/Payments"
+import PersonalInfo from "./pages/userAccount/PersonalInfo";
+import LoginAndSecurity from "./pages/userAccount/LoginAndSecurity";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -44,6 +51,13 @@ export default function App() {
           element={<Login setIsAuthenticated={setIsAuthenticated} />}
         />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/account-settings" element={<Account isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="/account-settings/personal-info" element={<PersonalInfo />} />
+        <Route path="/account-settings/login-and-security" element={<LoginAndSecurity />} />
+        <Route path="/account-settings/payments" element={<Payments />} />
+        <Route path="/account-settings/booking" element={<Booking />} />
+        <Route path="/account-settings/nestify" element={<Hosting />} />
+        <Route path="/account-settings/privacy-and-sharing" element={<PrivacyAndSharing />} />
       </Routes>
     </Router>
   );

@@ -40,19 +40,6 @@ header.scrolled {
   cursor: pointer;
 }
 
-.nest-your-home {
-  font-family: var(--primary-font);
-  text-wrap: nowrap;
-  font-size: 0.82rem;
-  padding: 10px;
-  transition: var(--transition-all-ease);
-}
-
-.nest-your-home:hover {
-  border-radius: var(--search-border-radius);
-  box-shadow: var(--box-shadow) var(--search-bar-box-shadow-color);
-}
-
 .user-profile-menu {
   display: flex;
   padding: 10px;

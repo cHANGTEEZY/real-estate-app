@@ -77,7 +77,7 @@ export default function Header({
           </div>
           {showSearch && <SearchComponent />}
           <div className="nav-account-management">
-            <span className="nest-your-home">Nest your home</span>
+
             <div className="user-profile-menu" onClick={handleToggle}>
               <AlignJustify className="user-profile-burger-logo" />
               <CircleUserRound className="user-logo" />
@@ -90,7 +90,7 @@ export default function Header({
                 <div className="account-management-top account-management">
                   {isAuthenticated ? (
                     <>
-                      <span className="account-item">Account</span>
+                      <span className="account-item" onClick={() => handleNavigate("account-settings")}>Account</span>
                       <span className="account-item">Trips</span>
                       <span className="account-item" onClick={handleLogOut}>
                         Logout
@@ -116,7 +116,7 @@ export default function Header({
 
                 <div className="account-management-bottom account-management">
                   <span className="account-item">Gift cards</span>
-                  <span className="account-item">Nest your home</span>
+                  <span className="account-item" onClick={() => handleNavigate("account-settings/nestify")}>Nest your home</span>
                   <span className="account-item">Help Center</span>
                 </div>
               </div>

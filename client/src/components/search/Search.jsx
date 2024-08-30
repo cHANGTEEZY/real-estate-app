@@ -73,9 +73,8 @@ export default function SearchComponent() {
         className={`search-bar ${clicked ? "clicked" : ""}`}
       >
         <div
-          className={`destination-div search-bar-div ${
-            clicked === "destination" ? "clicked" : ""
-          }`}
+          className={`destination-div search-bar-div ${clicked === "destination" ? "clicked" : ""
+            }`}
           onClick={() => handleClick("destination")}
         >
           <span className="search-title">Where</span>
@@ -90,9 +89,8 @@ export default function SearchComponent() {
         </div>
         <div className="book-date-div">
           <div
-            className={`checkin-div date-div ${
-              clicked === "checkin" ? "clicked" : ""
-            }`}
+            className={`checkin-div date-div ${clicked === "checkin" ? "clicked" : ""
+              }`}
             onClick={() => handleClick("checkin")}
           >
             <span className="search-title">Check in</span>
@@ -101,9 +99,8 @@ export default function SearchComponent() {
             </span>
           </div>
           <div
-            className={`checkout-div date-div ${
-              clicked === "checkout" ? "clicked" : ""
-            }`}
+            className={`checkout-div date-div ${clicked === "checkout" ? "clicked" : ""
+              }`}
             onClick={() => handleClick("checkout")}
           >
             <span className="search-title">Check out</span>
@@ -122,9 +119,8 @@ export default function SearchComponent() {
           ) : null}
         </div>
         <div
-          className={`search-div search-bar-div ${
-            clicked === "search-outer-div" ? "clicked" : ""
-          }`}
+          className={`search-div search-bar-div ${clicked === "search-outer-div" ? "clicked" : ""
+            }`}
         >
           <div
             className={`search-outer-div`}
@@ -140,7 +136,7 @@ export default function SearchComponent() {
               <Search className="search-icon" />
               <span
                 className={`search-text ${clicked ? "clicked" : ""}`}
-                // onClick={search}
+              // onClick={search}
               >
                 Search
               </span>
@@ -148,9 +144,8 @@ export default function SearchComponent() {
           </div>
           {clicked === "search-outer-div" ? (
             <div
-              className={`add-guest-div ${
-                clicked === "search-outer-div" ? "clicked" : ""
-              }`}
+              className={`add-guest-div ${clicked === "search-outer-div" ? "clicked" : ""
+                }`}
               ref={addGuestRef}
             >
               <AddGuest setTotalGuest={setTotalGuest} />

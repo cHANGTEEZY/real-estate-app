@@ -1,0 +1,66 @@
+.account-container {
+  margin: 0 auto;
+  width: 1240px;
+  font-family: var(--primary-font);
+}
+
+.account-title {
+  text-align: start;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+  }
+
+  span {
+    font-weight: 500;
+  }
+}
+
+.account-settings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.account-card {
+  height: 200px;
+  width: 400px;
+  /* border: 1px solid purple; */
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--header-box-shadow);
+  padding: 1.4rem 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  a {
+    text-decoration: none;
+  }
+
+  .account-card-top {
+    color: black;
+  }
+
+  .account-card-bottom {
+    h1 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: black;
+    }
+    p {
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      color: rgb(125, 106, 125);
+    }
+  }
+}
+/* 
+@media (max-width: 1200px) {
+  .account-settings-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} */

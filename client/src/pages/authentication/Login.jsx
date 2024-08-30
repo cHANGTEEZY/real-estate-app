@@ -4,10 +4,10 @@ import Footer from "../../components/Footer/Footer";
 import { toast } from "react-toastify";
 import "./Authenticate.css";
 import logo from "../../assets/images/Logo/n.png";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 // import { CookiesProvider, useCookies } from "react-cookie";
 
-export default function Login({ setIsAuthenticated }) {
+export default function Login({ isAuthenticated, setIsAuthenticated }) {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -88,7 +88,7 @@ export default function Login({ setIsAuthenticated }) {
                   Login
                 </button>
                 <span className="form-footer-span">
-                  Don&apos;t have an account? <a href={"/signup"}>SignUp</a>
+                  Don&apos;t have an account? <Link to={"/signup"}>SignUp</Link>
                 </span>
               </div>
             </div>
