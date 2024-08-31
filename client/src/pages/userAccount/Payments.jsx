@@ -1,7 +1,12 @@
-import React from 'react'
+import Breadcrumb from '../../components/ui/BreadCrumb/BreadCrumb';
+import Header from '../../components/Header/Header';
 
-export default function Payments() {
+export default function Payments({ isAuthenticated, setIsAuthenticated }) {
     return (
-        <div>Payments</div>
+        <>
+
+            <Header showPropertyOptions={false} showSearch={false} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+            <Breadcrumb />
+        </>
     )
 }

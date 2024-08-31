@@ -1,7 +1,13 @@
-import React from 'react'
+import Breadcrumb from '../../components/ui/BreadCrumb/BreadCrumb'
+import Header from '../../components/Header/Header'
 
-export default function LoginAndSecurity() {
+export default function LoginAndSecurity({ isAuthenticated, setIsAuthenticated }) {
     return (
-        <div>LoginAndSecurity</div>
+        <>
+
+            <Header showPropertyOptions={false} showSearch={false} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+            <Breadcrumb />
+        </>
     )
+
 }

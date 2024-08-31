@@ -52,11 +52,11 @@ export default function App() {
         />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/account-settings" element={<Account isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/account-settings/personal-info" element={<PersonalInfo />} />
-        <Route path="/account-settings/login-and-security" element={<LoginAndSecurity />} />
-        <Route path="/account-settings/payments" element={<Payments />} />
-        <Route path="/account-settings/booking" element={<Booking />} />
-        <Route path="/account-settings/nestify" element={<Hosting />} />
+        <Route path="/account-settings/personal-info" element={<PersonalInfo isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="/account-settings/login-and-security" element={<LoginAndSecurity isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="/account-settings/payments" element={<Payments isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="/account-settings/booking" element={<Booking isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
+        <Route path="/account-settings/nestify" element={<Hosting isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
         <Route path="/account-settings/privacy-and-sharing" element={<PrivacyAndSharing />} />
       </Routes>
     </Router>

@@ -6,7 +6,7 @@ import "./Authenticate.css";
 import logo from "../../assets/images/Logo/n.png";
 import { Link } from "react-router-dom";
 
-export default function SignUp() {
+export default function SignUp({ isAuthenticated, setIsAuthenticated }) {
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -75,7 +75,7 @@ export default function SignUp() {
 
   return (
     <div className="signup-container">
-      <Header showPropertyOptions={false} showSearch={false} />
+      <Header showPropertyOptions={false} showSearch={false} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
       <div className="signup-content">
         <div className="form-wrapper">
           <form onSubmit={handleSubmit} className="form">

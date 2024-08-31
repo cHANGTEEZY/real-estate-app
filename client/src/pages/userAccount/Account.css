@@ -9,12 +9,13 @@
   margin-bottom: 2rem;
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: 500;
   }
 
   span {
     font-weight: 500;
+    font-size: 1.2rem;
   }
 }
 
