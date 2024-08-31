@@ -3,7 +3,7 @@ footer {
   width: 100%;
   padding: 3rem 0 2rem 0;
   font-family: var(--primary-font);
-  position: absolute;
+  position: fixed;
   bottom: 0;
 }
 

@@ -14,7 +14,8 @@
 .personal-data {
   display: flex;
   flex-direction: column;
-
+  h1 {
+  }
   button {
     width: 30%;
     align-self: center;
