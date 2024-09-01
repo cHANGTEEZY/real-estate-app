@@ -1,45 +1,94 @@
 .personal-info-container {
-  width: 1200px;
+  width: 900px;
   margin: 0 auto;
   font-family: var(--primary-font);
+  /* border: 1px solid black; */
 }
 
 .personal-info-header h1 {
   font-size: 2.03rem;
   font-weight: 550;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
+}
+
+.personal-info-component-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5rem;
 }
 
 .personal-info-item {
   display: flex;
   justify-content: space-between;
-  width: 600px;
+  width: 450px;
   border-bottom: 1px solid rgb(220, 218, 218);
   padding: 1rem 0;
+}
+
+.account-user-name {
+  text-transform: capitalize;
 }
 
 .personal-data {
   h3 {
     font-weight: 400;
-  }
-  span {
-    font-size: 0.96rem;
-    color: rgb(99, 98, 98);
+    font-size: 1.1rem;
   }
 
-  .text-field {
-    width: 35rem;
+  span {
+    font-size: 0.9rem;
+    color: rgb(99, 98, 98);
   }
 
   button {
     margin-top: 1rem;
     display: block;
-    padding: 0.6rem 0.7rem;
+    padding: 0.8rem 1.2rem;
+    background-color: rgb(34, 34, 34);
+    color: rgb(242, 242, 242);
+    border: none;
+    border-radius: 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
   }
 }
 
-.edit-personal-data button {
-  border: none;
-  text-decoration: underline;
-  cursor: pointer;
+.edit-personal-data {
+  button {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 550;
+    font-size: 0.8rem;
+  }
+}
+
+.personal-info-about {
+  /* border: 1px solid black; */
+  width: 350px;
+  border: 1px solid rgb(179, 177, 177);
+  border-radius: 0.6rem;
+  padding: 2rem 2rem;
+}
+
+.personal-info-about-data {
+  display: grid;
+  gap: 10px;
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(87, 85, 85);
+  }
+}
+
+.personal-info-about-data:first-child,
+.personal-info-about-data:nth-child(2) {
+  border-bottom: 1px solid rgb(179, 177, 177);
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
 }

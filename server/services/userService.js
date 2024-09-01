@@ -16,13 +16,14 @@ router.get("/", authenticateToken, async (req, res) => {
             const userPhoneNumber = result.rows[0].user_phone_number;
             const userAddress = result.rows[0].user_address;
             const userZipCode = result.rows[0].address_zip_code;
-
+            const emergencyContact = result.rows[0].user_emergency_contact;
             res.status(200).json({
                 username: userName,
                 email: userEmail,
                 phoneNumber: userPhoneNumber,
                 address: userAddress,
-                zipCode: userZipCode
+                zipCode: userZipCode,
+                emergencyContact: emergencyContact
             });
         } else {
             res.status(404).json({ message: "User not found" });

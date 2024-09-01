@@ -5,8 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import "./Account.css"
-import { BrowserRouter as Routes, Route } from "react-router-dom";
-import PersonalInfo from "./PersonalInfo";
 
 export default function Account({ isAuthenticated, setIsAuthenticated }) {
 
@@ -51,7 +49,7 @@ export default function Account({ isAuthenticated, setIsAuthenticated }) {
             <section className="account-container">
                 <section className="account-title">
                     <h1>Account</h1>
-                    <span>Welcome back, {username}. Manage your account settings, bookings, and more from here.</span>
+                    <p>Welcome back,<span> {username}</span>. Manage your account settings, bookings, and more from here.</p>
                 </section>
                 <section className="account-grid-container">
                     <div className="account-settings-grid">

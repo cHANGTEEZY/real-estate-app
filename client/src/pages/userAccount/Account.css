@@ -2,6 +2,7 @@
   margin: 0 auto;
   width: 1240px;
   font-family: var(--primary-font);
+  margin-bottom: 3rem;
 }
 
 .account-title {
@@ -13,9 +14,13 @@
     font-weight: 500;
   }
 
-  span {
-    font-weight: 500;
+  p {
+    font-weight: 400;
     font-size: 1.2rem;
+    color: rgb(54, 52, 52);
+  }
+  span {
+    text-transform: capitalize;
   }
 }
 
@@ -59,9 +64,3 @@
     }
   }
 }
-/* 
-@media (max-width: 1200px) {
-  .account-settings-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-} */
