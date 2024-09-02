@@ -68,9 +68,7 @@ export default function PersonalInfo({ isAuthenticated, setIsAuthenticated }) {
         }
     };
 
-    const handleSave = () => {
-        console.log(newUserData)
-    }
+
 
     useEffect(() => {
         getUserData();
@@ -116,7 +114,7 @@ export default function PersonalInfo({ isAuthenticated, setIsAuthenticated }) {
                                                 },
                                             }}
                                             value={newUserData.newUserName}
-                                            onChange={(e) => setNewUserData(e.target.value)}
+                                            onChange={(e) => setNewUserData((prevValue) => ({ ...prevValue, newUserName: e.target.value }))}
                                         />
                                         <button onClick={handleSave}>Save</button>
                                     </>
@@ -139,7 +137,6 @@ export default function PersonalInfo({ isAuthenticated, setIsAuthenticated }) {
                                             id="outlined-basic"
                                             label="email"
                                             variant="outlined"
-                                            value={newUserData.newUserName}
                                             onChange={(e) => setNewUserData(e.target.value)}
                                             sx={{
                                                 width: "400px",
@@ -157,7 +154,7 @@ export default function PersonalInfo({ isAuthenticated, setIsAuthenticated }) {
                                                 },
                                             }}
                                         />
-                                        <button onClick={handleSave}>Save</button>
+                                        <button onClick={() => handleSave("email")}>Save</button>
                                     </>
                                 ) : (
                                     <span>{userData.userEmail}</span>
