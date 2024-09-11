@@ -1,0 +1,112 @@
+.login-and-security-component-container {
+  width: 1000px;
+  margin: 0 auto;
+  font-family: var(--primary-font);
+}
+
+.login-and-security-content-container {
+  display: flex;
+  position: relative;
+}
+
+.login-and-security-container {
+  width: 450px;
+}
+
+.login-and-security-header h1 {
+  font-size: 2.03rem;
+  font-weight: 550;
+  margin-bottom: 1rem;
+}
+
+.login-and-security-data {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-and-security-item {
+  margin-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.login-and-security-item:first-child {
+  border-bottom: 1px solid rgb(207, 203, 203);
+}
+
+.login-and-security-item-header {
+  margin-bottom: 2rem;
+}
+
+.login-data,
+.deactivate-section {
+  display: grid;
+  width: 450px;
+  margin-bottom: 2rem;
+  input {
+    height: 2.4rem;
+    font-size: 1.2rem;
+    border-radius: 0.51em;
+    border: 1px solid grey;
+    text-indent: 0.81rem;
+    margin-bottom: 1rem;
+    &:focus {
+      outline: none;
+    }
+  }
+
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+  button {
+    width: 40%;
+    padding: 0.7rem;
+    background-color: rgb(57, 130, 136);
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: white;
+    border-radius: 0.51em;
+    border: none;
+  }
+}
+
+.update-login-and-security-data button {
+  border: none;
+  color: rgb(57, 130, 136);
+  background-color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.deactivate-button-section {
+  button {
+    border: none;
+    font-size: 1.1rem;
+    color: red;
+    background-color: white;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.login-and-security-banner {
+  padding: 3rem 2rem;
+  display: grid;
+  width: 400px;
+  margin-left: auto;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  gap: 20px;
+  border: 1px solid rgb(212, 207, 207);
+}

@@ -19,18 +19,18 @@ router.post("/", async (req, res) => {
   try {
     const result = await pool.query(
       "SELECT * FROM user_details WHERE user_email=$1",
-      [email]
+      [email],
     );
 
     if (result.rows.length === 0) {
-      return res.status(400).json("Your email or password is incorrect");
+      return res.status(400).json("Your account doesn't exist");
     }
 
     const user = result.rows[0];
 
     const checkIfPassworIsCorrect = await bcrypt.compare(
       password,
-      user.user_password
+      user.user_password,
     );
     if (!checkIfPassworIsCorrect) {
       return res.status(400).json("Your email or password is incorrect");

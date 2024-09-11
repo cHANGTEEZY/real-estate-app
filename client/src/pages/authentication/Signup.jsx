@@ -4,9 +4,10 @@ import Footer from "../../components/Footer/Footer";
 import { toast } from "react-toastify";
 import "./Authenticate.css";
 import logo from "../../assets/images/Logo/n.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function SignUp({ isAuthenticated, setIsAuthenticated }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     email: "",
@@ -67,6 +68,9 @@ export default function SignUp({ isAuthenticated, setIsAuthenticated }) {
       } else {
         const result = await response.json();
         toast.success(result.message);
+        setTimeout(() => {
+          navigate("/login");
+        }, 2000);
       }
     } catch (error) {
       console.log(error);
@@ -75,7 +79,12 @@ export default function SignUp({ isAuthenticated, setIsAuthenticated }) {
 
   return (
     <div className="signup-container">
-      <Header showPropertyOptions={false} showSearch={false} isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />
+      <Header
+        showPropertyOptions={false}
+        showSearch={false}
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+      />
       <div className="signup-content">
         <div className="form-wrapper">
           <form onSubmit={handleSubmit} className="form">

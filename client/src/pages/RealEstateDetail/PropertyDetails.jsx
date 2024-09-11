@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { properties } from "../../data/properties";
 import "./PropertyDetails.css";
+import Breadcrumb from "../../components/ui/BreadCrumb/BreadCrumb";
 
 const PropertyDetails = () => {
   const { id } = useParams();
@@ -12,6 +13,7 @@ const PropertyDetails = () => {
 
   return (
     <div className="property-details">
+      <Breadcrumb />
       <h1>{property.title}</h1>
       <div className="property-images">
         {property.images.map((image, index) => (

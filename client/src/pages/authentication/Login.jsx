@@ -50,7 +50,12 @@ export default function Login({ isAuthenticated, setIsAuthenticated }) {
 
   return (
     <div className="signup-container">
-      <Header showPropertyOptions={false} showSearch={false} />
+      <Header
+        showPropertyOptions={false}
+        showSearch={false}
+        isAuthenticated={isAuthenticated}
+        setIsAuthenticated={setIsAuthenticated}
+      />
       <div className="signup-content">
         <div className="form-wrapper">
           <form className="form" onSubmit={handleSubmit}>

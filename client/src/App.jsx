@@ -13,9 +13,10 @@ import Account from "./pages/userAccount/Account";
 import Booking from "./pages/userAccount/Booking";
 import PrivacyAndSharing from "./pages/userAccount/PrivacyAndSharing";
 import Hosting from "./pages/userAccount/Hosting";
-import Payments from "./pages/userAccount/Payments"
+import Payments from "./pages/userAccount/Payments";
 import PersonalInfo from "./pages/userAccount/PersonalInfo";
 import LoginAndSecurity from "./pages/userAccount/LoginAndSecurity";
+import PropertyDetails from "./pages/RealEstateDetail/PropertyDetails";
 
 export default function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -48,16 +49,89 @@ export default function App() {
         />
         <Route
           path="/login"
-          element={<Login setIsAuthenticated={setIsAuthenticated} />}
+          element={
+            <Login
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
         />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/account-settings" element={<Account isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/account-settings/personal-info" element={<PersonalInfo isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/account-settings/login-and-security" element={<LoginAndSecurity isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/account-settings/payments" element={<Payments isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/account-settings/booking" element={<Booking isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/account-settings/nestify" element={<Hosting isAuthenticated={isAuthenticated} setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/account-settings/privacy-and-sharing" element={<PrivacyAndSharing />} />
+        <Route
+          path="/signup"
+          element={
+            <SignUp
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
+        />
+        <Route
+          path="/property-detail"
+          element={
+            <PropertyDetails
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
+        />
+        <Route
+          path="/account-settings"
+          element={
+            <Account
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
+        />
+        <Route
+          path="/account-settings/personal-info"
+          element={
+            <PersonalInfo
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
+        />
+        <Route
+          path="/account-settings/login-and-security"
+          element={
+            <LoginAndSecurity
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
+        />
+        <Route
+          path="/account-settings/payments"
+          element={
+            <Payments
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
+        />
+        <Route
+          path="/account-settings/booking"
+          element={
+            <Booking
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
+        />
+        <Route
+          path="/account-settings/nestify"
+          element={
+            <Hosting
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
+          }
+        />
+        <Route
+          path="/account-settings/privacy-and-sharing"
+          element={<PrivacyAndSharing />}
+        />
       </Routes>
     </Router>
   );
