@@ -11,3 +11,37 @@
   border-bottom: 1px solid rgb(219, 217, 217);
   padding-bottom: 1rem;
 }
+
+.booking-data {
+  border-bottom: 1px solid rgb(219, 217, 217);
+  padding-bottom: 2.8rem;
+  h2 {
+    font-weight: 450;
+  }
+  p {
+    font-weight: 400;
+  }
+  button {
+    padding: 1rem 1.7rem;
+    border: 1px solid black;
+    border-radius: 0.8rem;
+    background-color: #fff;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-top: 1rem;
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(255, 248, 248);
+    }
+  }
+}
+
+.cant-find-booking {
+  margin-top: 1.22rem;
+  font-size: 0.912rem;
+  span {
+    text-decoration: underline;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}

@@ -52,7 +52,6 @@ export default function Header({
     };
   }, []);
 
-
   const dropdownBottom = isAuthenticated ? "-200%" : "-170%";
 
   const logoutNavigate = useNavigate();
@@ -77,21 +76,33 @@ export default function Header({
           </div>
           {showSearch && <SearchComponent />}
           <div className="nav-account-management">
-
             <div className="user-profile-menu" onClick={handleToggle}>
               <AlignJustify className="user-profile-burger-logo" />
               <CircleUserRound className="user-logo" />
               <div
-                className={`account-management-dropdown ${clicked ? "visible" : ""
-                  }`}
+                className={`account-management-dropdown ${
+                  clicked ? "visible" : ""
+                }`}
                 ref={dropDownRef}
                 style={{ bottom: dropdownBottom }}
               >
                 <div className="account-management-top account-management">
                   {isAuthenticated ? (
                     <>
-                      <span className="account-item" onClick={() => handleNavigate("account-settings")}>Account</span>
-                      <span className="account-item">Trips</span>
+                      <span
+                        className="account-item"
+                        onClick={() => handleNavigate("account-settings")}
+                      >
+                        Account
+                      </span>
+                      <span
+                        className="account-item"
+                        onClick={() =>
+                          handleNavigate("account-settings/booking")
+                        }
+                      >
+                        Trips
+                      </span>
                       <span className="account-item" onClick={handleLogOut}>
                         Logout
                       </span>
@@ -116,7 +127,12 @@ export default function Header({
 
                 <div className="account-management-bottom account-management">
                   <span className="account-item">Gift cards</span>
-                  <span className="account-item" onClick={() => handleNavigate("account-settings/nestify")}>Nest your home</span>
+                  <span
+                    className="account-item"
+                    onClick={() => handleNavigate("account-settings/nestify")}
+                  >
+                    Nest your home
+                  </span>
                   <span className="account-item">Help Center</span>
                 </div>
               </div>

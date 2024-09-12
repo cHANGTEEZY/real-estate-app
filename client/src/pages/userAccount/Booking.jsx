@@ -23,12 +23,12 @@ export default function Booking({ isAuthenticated, setIsAuthenticated }) {
       <section className="booking-component-container">
         <Breadcrumb />
         <div className="booking-component-header">
-          <h1>Trips</h1>
+          <h1>Booking</h1>
         </div>
         <div className="booking-content-container">
-          <div className="booking-data">
-            {!isBooked ? (
-              <>
+          {!isBooked ? (
+            <>
+              <div className="booking-data">
                 <h2>No trips booked...yet!</h2>
                 <p>
                   Time to dust off your bags and start planning your next
@@ -37,11 +37,15 @@ export default function Booking({ isAuthenticated, setIsAuthenticated }) {
                 <button onClick={() => handleNavigate("")}>
                   Start Searching
                 </button>
-              </>
-            ) : (
-              ""
-            )}
-          </div>
+              </div>
+              <p className="cant-find-booking">
+                Can't find your reservation here?{" "}
+                <span> Visit the Help Center </span>
+              </p>
+            </>
+          ) : (
+            ""
+          )}
         </div>
       </section>
     </>

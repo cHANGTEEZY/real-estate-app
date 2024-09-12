@@ -28,7 +28,6 @@ export default function App() {
     } else {
       setIsAuthenticated(false);
     }
-    <Navigate to="/" />;
   }, []);
 
   return (
@@ -37,14 +36,10 @@ export default function App() {
         <Route
           path="/"
           element={
-            isAuthenticated ? (
-              <Home
-                isAuthenticated={isAuthenticated}
-                setIsAuthenticated={setIsAuthenticated}
-              />
-            ) : (
-              <Navigate to="/login" />
-            )
+            <Home
+              isAuthenticated={isAuthenticated}
+              setIsAuthenticated={setIsAuthenticated}
+            />
           }
         />
         <Route
