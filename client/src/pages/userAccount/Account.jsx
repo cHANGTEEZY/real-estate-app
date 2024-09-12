@@ -8,6 +8,7 @@ import {
   TicketPlus,
   CreditCard,
 } from "lucide-react";
+import { accountGrid } from "../../constants";
 import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -62,81 +63,21 @@ export default function Account({ isAuthenticated, setIsAuthenticated }) {
         </section>
         <section className="account-grid-container">
           <div className="account-settings-grid">
-            <div className="account-card account-profile">
-              <Link to="personal-info">
-                <div className="account-card-top">
-                  <IdCard size={38} strokeWidth={1.3} />
+            {accountGrid.map((item) => {
+              return (
+                <div key={item.id} className="account-card">
+                  <Link to={item.link}>
+                    <div className="account-card-top">
+                      <item.icon />
+                    </div>
+                    <div className="account-card-bottom">
+                      <h1>{item.title}</h1>
+                      <p>{item.description}</p>
+                    </div>
+                  </Link>
                 </div>
-                <div className="account-card-bottom">
-                  <h1>Personal info</h1>
-                  <p>Provide personal details and how we can reach you</p>
-                </div>
-              </Link>
-            </div>
-            <div className="account-card account-security">
-              <Link to="login-and-security">
-                <div className="account-card-top">
-                  <ShieldHalf size={38} strokeWidth={1.3} />
-                </div>
-                <div className="account-card-bottom">
-                  <h1>Login & Security</h1>
-                  <p>Update your password & secure your account</p>
-                </div>
-              </Link>
-            </div>
-            <div className="account-card account-payment">
-              <Link to="payments">
-                <div className="account-card-top">
-                  <CreditCard size={38} strokeWidth={1.3} />
-                </div>
-                <div className="account-card-bottom">
-                  <h1>Payments & payouts</h1>
-                  <p>Review payments, payouts, coupons, and gift cards</p>
-                </div>
-              </Link>
-            </div>
-            <div className="account-card account-booking">
-              <Link to="booking">
-                <div className="account-card-top">
-                  <TicketPlus size={38} strokeWidth={1.3} />
-                </div>
-                <div className="account-card-bottom">
-                  <h1>Bookings</h1>
-                  <p>
-                    Manage your upcoming and past bookings, and view details of
-                    your reservations.
-                  </p>
-                </div>
-              </Link>
-            </div>
-            <div className="account-card account-nestify">
-              <Link to="nestify">
-                <div className="account-card-top">
-                  <House size={38} strokeWidth={1.3} />
-                </div>
-                <div className="account-card-bottom">
-                  <h1>Hosting</h1>
-                  <p>
-                    Manage your listings, check your bookings, and connect with
-                    guests.
-                  </p>
-                </div>
-              </Link>
-            </div>
-            <div className="account-card account-privacy">
-              <Link to="privacy-and-sharing">
-                <div className="account-card-top">
-                  <Eye size={38} strokeWidth={1.3} />
-                </div>
-                <div className="account-card-bottom">
-                  <h1>Privacy & sharing</h1>
-                  <p>
-                    Manage your personal data, connected services, and data
-                    sharing settings
-                  </p>
-                </div>
-              </Link>
-            </div>
+              );
+            })}
           </div>
         </section>
       </section>
