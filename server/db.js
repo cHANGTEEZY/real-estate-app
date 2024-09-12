@@ -7,3 +7,15 @@ export const pool = new pg.Pool({
   password: "changteezy",
   port: 5432,
 });
+
+async function testConnection() {
+  try {
+    const client = await pool.connect();
+    console.log("Connected to the database");
+    client.release();
+  } catch (err) {
+    console.error("Error connecting to the database", err);
+  }
+}
+
+testConnection();
