@@ -36,10 +36,9 @@
 
   .hosting-component-hero-right-side {
     width: 100%;
-    iframe {
-      border-radius: 2rem;
-      outline: none;
-      border: none;
+    img {
+      height: 100%;
+      object-fit: contain;
     }
   }
 }
@@ -106,5 +105,19 @@
     font-size: 0.91rem;
     margin-top: 1rem;
     color: rgb(106, 106, 106);
+  }
+}
+
+/* responsive */
+
+@media (max-height: 800px) {
+  .hosting-component-hero-section {
+    height: 60vh;
+    margin-bottom: 15rem;
+  }
+  .hosting-component-hero-right-side {
+    img {
+      height: 100%;
+    }
   }
 }

@@ -7,7 +7,7 @@ const router = express.Router();
 router.put("/", authenticateToken, async (req, res) => {
   const userId = req.userId.id;
   const { username, email, phoneNumber, address, zipCode, emergencyContact } =
-    wreq.body;
+    req.body;
 
   try {
     const updateUser = await pool.query(
