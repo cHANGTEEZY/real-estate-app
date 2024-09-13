@@ -6,7 +6,105 @@
 
 .hosting-component-container-header {
   h1 {
+    color: rgb(20, 184, 166);
+  }
+
+  h1,
+  p {
     font-weight: 500;
-    font-size: 2rem;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+  margin-bottom: 1rem;
+}
+
+.hosting-component-hero-section {
+  display: flex;
+  margin-top: 4rem;
+  /* border: 1px solid black; */
+  height: 50dvh;
+  .hosting-component-hero-left-side {
+    max-width: 650px;
+    width: 100%;
+    /* border: 1px dotted rgb(62, 117, 76); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hosting-component-hero-right-side {
+    width: 100%;
+    iframe {
+      border-radius: 2rem;
+      outline: none;
+      border: none;
+    }
+  }
+}
+
+/* faq-section */
+
+.hosting-faq {
+  font-family: var(--primary-font);
+  background-color: rgb(247, 247, 247);
+}
+
+.faq-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  padding: 3rem;
+}
+
+.faq-title {
+  max-width: 650px;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.faqs {
+  width: 100%;
+  max-width: 650px;
+}
+.nestify-setup-description {
+  margin: 4rem 0;
+}
+
+.nestify-setup-title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 550;
+
+  margin-bottom: 1rem;
+}
+
+.nestify-setup-image {
+  width: 1300px;
+  object-fit: contain;
+}
+
+/* grid-section  */
+
+.nestify-setup-description-grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.nestify-setup-description-item {
+  margin-top: 3rem;
+  /* border: 1px solid black; */
+  height: 10rem;
+  width: 28rem;
+  h3 {
+    font-weight: 550;
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 0.91rem;
+    margin-top: 1rem;
+    color: rgb(106, 106, 106);
   }
 }
