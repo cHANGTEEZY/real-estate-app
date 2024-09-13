@@ -4,7 +4,8 @@ import Breadcrumb from "../../components/ui/BreadCrumb/BreadCrumb";
 import NumberSlider from "../../components/ui/Slider/numberSlider";
 import Faq from "react-faq-component";
 import { faqData, nestifySetupDescription } from "../../constants";
-import netsify from "../../assets/images/nestifySetup.png";
+import { beachHouse, nestifySetupPeople } from "../../assets/Index.js";
+
 import "./Hosting.css";
 
 export default function Hosting({ isAuthenticated, setIsAuthenticated }) {
@@ -30,15 +31,7 @@ export default function Hosting({ isAuthenticated, setIsAuthenticated }) {
           </div>
 
           <div className="hosting-component-hero-right-side">
-            <iframe
-              title="Map"
-              width="100%"
-              height="600"
-              src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=kathmandu+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-              style={{ borderRadius: "2rem", outline: "none" }}
-            >
-              <a href="https://www.gps.ie/">Hello</a>
-            </iframe>
+            <img src={beachHouse} alt="beach-house-image" />
           </div>
         </div>
         <div className="nestify-setup-description">
@@ -46,7 +39,7 @@ export default function Hosting({ isAuthenticated, setIsAuthenticated }) {
             Nestify it easily with Nestify Setup
           </h1>
           <img
-            src={netsify}
+            src={nestifySetupPeople}
             alt="nestify-image"
             className="nestify-setup-image"
           />
