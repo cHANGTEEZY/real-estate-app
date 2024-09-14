@@ -1,7 +1,7 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Breadcrumb from "../../components/ui/BreadCrumb/BreadCrumb";
-import NumberSlider from "../../components/ui/Slider/numberSlider";
+import NumberSlider from "../../components/ui/Slider/NumberSlider";
 import Faq from "react-faq-component";
 import { faqData, nestifySetupDescription } from "../../constants";
 import { beachHouse, nestifySetupPeople } from "../../assets/Index.js";
