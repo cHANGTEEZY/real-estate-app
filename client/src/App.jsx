@@ -1,9 +1,4 @@
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import Login from "./pages/authentication/Login";
 import SignUp from "./pages/authentication/Signup";
@@ -127,6 +122,11 @@ export default function App() {
           path="/account-settings/privacy-and-sharing"
           element={<PrivacyAndSharing />}
         />
+
+        {/* <Route
+          path="/account-settings/nestify/setup"
+          element={<HostingSetup />}
+        /> */}
       </Routes>
     </Router>
   );

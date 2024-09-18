@@ -110,11 +110,12 @@ const faqData = {
   ],
   styles: {
     bgColor: "rgb(247, 247, 247)",
-    // rowTitleTextSize: "20px",
+    rowTitleTextSize: "17px",
     // rowContentPaddingTop: "20px",
     // rowContentPaddingBottom: "20px",
     // rowContentPaddingLeft: "50px",
-    // rowContentTextSize: "17px",
+    rowContentTextSize: "13px",
+    rowContentColor: "grey",
   },
   config: {
     animate: true,

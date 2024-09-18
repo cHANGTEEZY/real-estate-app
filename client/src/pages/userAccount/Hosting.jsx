@@ -5,7 +5,7 @@ import NumberSlider from "../../components/ui/Slider/NumberSlider";
 import Faq from "react-faq-component";
 import { faqData, nestifySetupDescription } from "../../constants";
 import { beachHouse, nestifySetupPeople } from "../../assets/Index.js";
-
+import { Link } from "react-router-dom";
 import "./Hosting.css";
 
 export default function Hosting({ isAuthenticated, setIsAuthenticated }) {
@@ -53,6 +53,20 @@ export default function Hosting({ isAuthenticated, setIsAuthenticated }) {
           </div>
         </div>
       </section>
+
+      <section className="ready-to-setup">
+        <div className="ready-to-setup-container">
+          <div className="ready-to-setup-header">
+            <h3>Are you ready to setup?</h3>
+          </div>
+          <div className="ready-to-setup-button">
+            <Link to="/account-settings/hosting/setup">
+              <button>Setup</button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="hosting-faq">
         <div className="faq-container">
           <div className="faq-title">
@@ -63,6 +77,7 @@ export default function Hosting({ isAuthenticated, setIsAuthenticated }) {
           </div>
         </div>
       </section>
+
       <Footer />
     </>
   );
